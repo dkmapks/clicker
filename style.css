@@ -19,18 +19,32 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     margin-top: 20px;
+    transition: transform 0.1s;
+}
+
+#clicker:active {
+    transform: scale(0.95);
 }
 
 #score {
     font-weight: bold;
 }
 
-.upgrades, .products, .save-load {
+.upgrades, .products, .achievements, .missions, .leaderboard, .customization, .save-load {
     margin-top: 20px;
 }
 
-.upgrades button, .products button, .save-load button {
+.upgrades button, .products button, .save-load button, .customization button {
     margin: 5px;
     padding: 10px 20px;
     font-size: 14px;
+}
+
+.achievements ul, .missions ul, .leaderboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievements li, .missions li, .leaderboard li {
+    margin: 5px 0;
 }
