@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game">
+        <h1>Clicker Game</h1>
+        <div id="stats">
+            <p>Clicks: <span id="clicks">0</span></p>
+            <p>Bank Balance: <span id="bank">0</span></p>
+        </div>
+        <button id="click-button">Click Me!</button>
+        <div id="upgrades">
+            <h2>Upgrades</h2>
+            <button id="upgrade1">+1 Click (Cost: 25)</button>
+            <button id="upgrade2">+1.5/s (Cost: 125)</button>
+            <button id="upgrade3">+10 Clicks (Cost: 200)</button>
+            <button id="upgrade4">+8/s (Cost: 600)</button>
+            <button id="upgrade5">+100 Clicks (Cost: 1500)</button>
+        </div>
+        <div id="bank-section">
+            <h2>Bank</h2>
+            <input type="number" id="bank-amount" placeholder="Enter amount">
+            <button id="deposit-button">Deposit</button>
+            <p id="bank-timer"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
