@@ -2,95 +2,77 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kasyno Nowoczesne</title>
+  <title>Neonowe Kasyno</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
 
-    <header>
-      <h1>Kasyno Nowoczesne</h1>
-      <div id="clock"></div>
-      <div id="bonus-timer"></div>
-      <div class="user-info">
-        Nick: <span id="nickname"></span> | Balans: <span id="balance">1000</span> KC
+  <header>
+    <h1>🎰 Neonowe Kasyno</h1>
+    <div id="clock"></div>
+    <div id="nickname"></div>
+    <div>Balans: <span id="balance">0</span> KC</div>
+  </header>
+
+  <nav>
+    <button onclick="showSection('games')">Gry</button>
+    <button onclick="showSection('shop')">Sklep</button>
+    <button onclick="showSection('leaderboard')">Ranking</button>
+  </nav>
+
+  <main>
+    <!-- Gry -->
+    <section id="games" class="section">
+      <h2>Jednoręki bandyta</h2>
+      <div class="slots">
+        <div id="slot1">?</div>
+        <div id="slot2">?</div>
+        <div id="slot3">?</div>
       </div>
-    </header>
 
-    <nav>
-      <button class="nav-btn" onclick="showSection('games')">Gry</button>
-      <button class="nav-btn" onclick="showSection('store')">Sklep</button>
-      <button class="nav-btn" onclick="showSection('quests')">Questy</button>
-      <button class="nav-btn" onclick="showSection('leaderboard')">Ranking</button>
-      <button class="nav-btn" onclick="showSection('stats')">Statystyki</button>
-      <button class="nav-btn" onclick="showSection('vip')">VIP</button>
-    </nav>
+      <input type="number" id="bet-amount" placeholder="Stawka (KC)">
+      <div class="buttons">
+        <button id="spin-btn">Zakreć!</button>
+        <button id="auto-play-btn">Auto-Play</button>
+      </div>
 
-    <main>
-      <section id="games" class="section">
-        <h2>Gry</h2>
+      <h2>Ruletka</h2>
+      <div class="roulette-wheel" id="wheel"></div>
 
-        <div class="betting">
-          Zakład: <input type="number" id="bet-amount" min="1" value="10">
-          <button id="spin-btn">Zakreć</button>
-          <button id="auto-play-btn">Auto-Play</button>
-        </div>
+      <h2>Historia</h2>
+      <div id="history"></div>
 
-        <div class="games-area">
-          <div class="roulette">
-            <h3>Ruletka</h3>
-            <div id="wheel"></div>
-          </div>
+      <h2>Dzienny Bonus</h2>
+      <button id="claim-bonus-btn">Odbierz Bonus</button>
 
-          <div class="slots">
-            <h3>Jednoręki Bandyta</h3>
-            <div class="slot-machine">
-              <div class="slot" id="slot1">7</div>
-              <div class="slot" id="slot2">7</div>
-              <div class="slot" id="slot3">7</div>
-            </div>
-          </div>
-        </div>
+      <h2>Doświadczenie</h2>
+      <div id="xp-bar" class="xp-bar">Poziom 1</div>
 
-        <div id="notifications"></div>
-        <div id="history"></div>
-      </section>
+      <div id="notifications" class="notifications"></div>
+    </section>
 
-      <section id="store" class="section hidden">
-        <h2>Sklep</h2>
-        <div id="store-items"></div>
-      </section>
+    <!-- Sklep -->
+    <section id="shop" class="section hidden">
+      <h2>Sklep (w budowie 🚧)</h2>
+      <p>Wkrótce będzie można kupować boostery i ulepszenia!</p>
+    </section>
 
-      <section id="quests" class="section hidden">
-        <h2>Questy</h2>
-        <div id="quests-list"></div>
-      </section>
+    <!-- Ranking -->
+    <section id="leaderboard" class="section hidden">
+      <h2>Top 10 Graczy</h2>
+      <div id="leaderboard-list"></div>
+    </section>
+  </main>
 
-      <section id="leaderboard" class="section hidden">
-        <h2>Ranking Graczy</h2>
-        <div id="leaderboard-list"></div>
-      </section>
+  <footer>
+    <p>&copy; 2025 Neonowe Kasyno. Wszystkie prawa zastrzeżone.</p>
+  </footer>
 
-      <section id="stats" class="section hidden">
-        <h2>Statystyki</h2>
-        <div id="stats-info"></div>
-      </section>
-
-      <section id="vip" class="section hidden">
-        <h2>VIP System</h2>
-        <div id="vip-info"></div>
-      </section>
-    </main>
-
-    <canvas id="fireworks"></canvas>
-
-    <audio id="sound-click" src="sounds/click.mp3"></audio>
-    <audio id="sound-win" src="sounds/win.mp3"></audio>
-    <audio id="sound-lose" src="sounds/lose.mp3"></audio>
-    <audio id="sound-jackpot" src="sounds/jackpot.mp3"></audio>
-
-  </div>
+  <!-- Dźwięki -->
+  <audio id="sound-click" src="sounds/click.mp3"></audio>
+  <audio id="sound-win" src="sounds/win.mp3"></audio>
+  <audio id="sound-lose" src="sounds/lose.mp3"></audio>
+  <audio id="sound-jackpot" src="sounds/jackpot.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
