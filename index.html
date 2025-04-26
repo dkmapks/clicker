@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kasyno Nowoczesne</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <header>
+      <h1>Kasyno Nowoczesne</h1>
+      <div id="clock"></div>
+      <div id="bonus-timer"></div>
+      <div class="user-info">
+        Nick: <span id="nickname"></span> | Balans: <span id="balance">1000</span> KC
+      </div>
+    </header>
+
+    <nav>
+      <button class="nav-btn" onclick="showSection('games')">Gry</button>
+      <button class="nav-btn" onclick="showSection('store')">Sklep</button>
+      <button class="nav-btn" onclick="showSection('quests')">Questy</button>
+      <button class="nav-btn" onclick="showSection('leaderboard')">Ranking</button>
+      <button class="nav-btn" onclick="showSection('stats')">Statystyki</button>
+      <button class="nav-btn" onclick="showSection('vip')">VIP</button>
+    </nav>
+
+    <main>
+      <section id="games" class="section">
+        <h2>Gry</h2>
+
+        <div class="betting">
+          Zakład: <input type="number" id="bet-amount" min="1" value="10">
+          <button id="spin-btn">Zakreć</button>
+          <button id="auto-play-btn">Auto-Play</button>
+        </div>
+
+        <div class="games-area">
+          <div class="roulette">
+            <h3>Ruletka</h3>
+            <div id="wheel"></div>
+          </div>
+
+          <div class="slots">
+            <h3>Jednoręki Bandyta</h3>
+            <div class="slot-machine">
+              <div class="slot" id="slot1">7</div>
+              <div class="slot" id="slot2">7</div>
+              <div class="slot" id="slot3">7</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="notifications"></div>
+        <div id="history"></div>
+      </section>
+
+      <section id="store" class="section hidden">
+        <h2>Sklep</h2>
+        <div id="store-items"></div>
+      </section>
+
+      <section id="quests" class="section hidden">
+        <h2>Questy</h2>
+        <div id="quests-list"></div>
+      </section>
+
+      <section id="leaderboard" class="section hidden">
+        <h2>Ranking Graczy</h2>
+        <div id="leaderboard-list"></div>
+      </section>
+
+      <section id="stats" class="section hidden">
+        <h2>Statystyki</h2>
+        <div id="stats-info"></div>
+      </section>
+
+      <section id="vip" class="section hidden">
+        <h2>VIP System</h2>
+        <div id="vip-info"></div>
+      </section>
+    </main>
+
+    <canvas id="fireworks"></canvas>
+
+    <audio id="sound-click" src="sounds/click.mp3"></audio>
+    <audio id="sound-win" src="sounds/win.mp3"></audio>
+    <audio id="sound-lose" src="sounds/lose.mp3"></audio>
+    <audio id="sound-jackpot" src="sounds/jackpot.mp3"></audio>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
