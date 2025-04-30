@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bank Clicker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bank Clicker</h1>
+  <div id="money">Gotówka: $0</div>
+  <button id="clicker">Kliknij, by zarobić $1</button>
+
+  <h2>Ulepszenia</h2>
+  <div id="upgrades">
+    <button onclick="buyUpgrade('cashPerClick')">Kasa (+$1/klik) - $50</button>
+    <button onclick="buyUpgrade('cashier')">Kasjer (+$1/s) - $100</button>
+    <button onclick="buyUpgrade('branch')">Oddział (+$10/s) - $1000</button>
+    <button onclick="buyUpgrade('stock')">Giełda (zmienny zysk) - $2000</button>
+  </div>
+
+  <button onclick="resetGame()" class="reset">Reset gry</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
